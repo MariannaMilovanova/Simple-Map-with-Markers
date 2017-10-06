@@ -42,7 +42,8 @@ export default class SimpleMap extends Component {
         center={this.props.center}
         addMarker={this.props.addMarker}
         deleteMarker={this.props.deleteMarker}
-        mapId={this.props.mapId}
+        map={this.props.map}
+        showMarkers={this.props.showMarkers}
       />
     )
   }

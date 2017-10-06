@@ -1,40 +1,30 @@
 import axios from 'axios';
 
-const url = 'http://localhost:2020/api';
-const urlNoApi = 'http://localhost:2020';
-
-const createInitialMap = (map) => {
-     return fetch(urlNoApi + '/mapInitial', {
-        method: 'POST',
-        body: ({})
-        })
-        .then((response) => response.json())
-        .catch((error) => error.data);
-}
+const url = 'http://localhost:2020/api/map';
 
 const getMap = () =>
-    axios.get(url + '/map/')
+    axios.get(url)
         .then((response) => response.data)
         .catch((error) => error.data);
 
-const getMarkers = () =>
-    axios.get(url + '/map/')
+const getMarkers = (id) =>
+    axios.get(url + '/' + id)
         .then((response) => response.data)
         .catch((error) => error.data);
 
-const addUserMarkers = (markers) =>
-    axios.post(url + '/map/markers', markers)
+const addUserMarkers = (payload) =>
+    axios.post(url + '/' + payload.id + '/markers/', payload.markers)
         .then((response) => response.data)
         .catch((error) => error.data);
 
-const deleteMarker = (_id) =>
-    axios.delete(url + '/map/markers/' + _id)
+const deleteMarker = (payload) =>
+    axios.delete(url + '/' + payload.mapId + '/markers/' + payload.markerId)
         .then((response) => response.data)
         .catch((error) => error.data);
 
 export {
+    getMap,
     getMarkers,
-    createInitialMap,
     addUserMarkers,
     deleteMarker
 };

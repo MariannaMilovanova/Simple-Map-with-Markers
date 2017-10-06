@@ -34,6 +34,7 @@ export const addMarker = (coords) => {
     };
 };
 
+
 export const deleteMarker = (mapId, coords) => {
     return {
         type: 'DELETE_MARKER',
@@ -50,8 +51,8 @@ export const saveAllMarker = (mapId, markers) => {
     };
 };
 
-export const getAndShowAllMarker = () => {
+export const showAllMarker = () => {
     return {
-        type: 'GET_AND_SHOW_ALL_MARKERS'
+        type: 'SHOW_ALL_MARKERS'
     };
 };

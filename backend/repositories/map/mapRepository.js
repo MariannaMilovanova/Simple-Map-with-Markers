@@ -17,6 +17,14 @@ class MapRepository extends Repository {
         return new this.model({}).save();
     }
 
+    saveMarkers(mapId, markers) {
+        return this.model.findByIdAndUpdate(
+            mapId,
+            { $set: {userMarkers: markers}},
+            { new: true }
+        );
+    }
+
     // addMarkersToMap(markers) {
     //     return this.model.findByIdAndUpdate(
     //         baseId,

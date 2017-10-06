@@ -10,7 +10,6 @@ class HomeContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className = "home-page-wrapper">
         <Header />
@@ -24,13 +23,14 @@ class HomeContainer extends React.Component {
                           center={this.props.center}
                           addMarker={this.props.addMarker}
                           deleteMarker={this.props.deleteMarker}
-                          mapId={this.props.mapId}
+                          map={this.props.map}
                           getMap={this.props.getMap}
+                          showMarkers={this.props.showMarkers}
                           />
             <MapButtons goToCurrentLocation={this.props.goToCurrentLocation}
                         currentLocation={this.props.currentLocation}
                         saveAllMarker={this.props.saveAllMarker}
-                        getAndShowAllMarker={this.props.getAndShowAllMarker}
+                        showAllMarker={this.props.showAllMarker}
                         markers={this.props.markers}
                         mapId={this.props.mapId}
                         />

@@ -7,12 +7,19 @@ import { withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps"
 class MapComponent extends Component {
   constructor(props) {
       super(props);
-      this.state={
+      this.state = {
         markers: []
       }
     }
   componentDidMount(){
     this.props.getCurrentLocation(this.props.coords)
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.map && this.props.showLocation == nextProps.showLocation) {
+      this.setState({
+        markers: nextProps.map.userMarkers
+      })
+    }
   }
   handleMapClick = (event) => {
     let markers = [...this.state.markers] 
@@ -26,7 +33,7 @@ class MapComponent extends Component {
   
   deleteMarker = (index) => {
     let markers = [...this.state.markers]
-    this.props.deleteMarker(this.props.mapId, markers[index]);
+    this.props.deleteMarker(this.props.map._id, markers[index]);
     markers.splice(index, 1);
     this.setState({
       markers: markers
@@ -50,7 +57,7 @@ class MapComponent extends Component {
             </div>
           </InfoWindow>
         }
-        {this.state.markers.map((marker, i)=> {
+        {this.props.showMarkers && this.state.markers.map((marker, i)=> {
           return <Marker position={marker} key={i} onClick={(event, marker)=>this.deleteMarker(i)}/>
         })}
       </GoogleMap>

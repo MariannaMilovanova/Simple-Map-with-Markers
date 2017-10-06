@@ -19,8 +19,9 @@ class MapContainer extends React.Component {
                                center={this.props.center}
                                addMarker={this.props.addMarker}
                                deleteMarker={this.props.deleteMarker}
-                               mapId={this.props.mapId}
+                               map={this.props.map}
                                getMap={this.props.getMap}
+                               showMarkers={this.props.showMarkers}
                             />
                 </div>
           : <div>Getting the location data&hellip; </div>;

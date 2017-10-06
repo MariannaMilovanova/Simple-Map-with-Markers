@@ -25,7 +25,6 @@ app.use(cors());
 const authCheckMiddleware = require('./middleware/authCheck');
 app.use('/api', authCheckMiddleware);
 app.use('/auth', require('./routes/auth/auth'));
-app.use('/mapInitial', require('./routes/map/mapInitialRoutes'));
 
 require('./routes/index')(router);
 app.use('/api', router);

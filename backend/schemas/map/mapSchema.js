@@ -9,13 +9,7 @@ const mapSchema = new Schema({
         default: 'My Simple Map'
     },
     description: String,
-    userMarkers: [
-        {
-         _id: ObjectId, 
-         lat: Number,
-         lng: Number 
-        }
-    ],
+    userMarkers: [],
     searchMarkers: [
         {
          _id: ObjectId, 
