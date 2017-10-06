@@ -1,0 +1,33 @@
+.login-wrapper {
+  text-align: center;
+  flex-direction: column;
+  padding-top: 5%;
+  .login-header{
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    padding-bottom: 5%;
+  }
+  .login-form{
+    display: block;
+    display: flex;
+    justify-content: center;
+    .ui.form{
+        //max-width: 40% !important;
+        min-width: 40% !important;
+    }
+    .loginBtn{
+      padding: 4% 0;
+      font-size: 18px;
+    }
+  }
+  .login-footer-wrapper{
+    padding-top: 2%; 
+    .login-footer-text{
+      display: inline-block;
+    }
+    .login-footer-btn{
+      display: inline-block;
+      padding-left: 2%; 
+    }
+  }
+}

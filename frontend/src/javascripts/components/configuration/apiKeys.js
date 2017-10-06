@@ -1,0 +1,1 @@
+export const API_KEY_GM_JS = 'AIzaSyAznlT1kzLjNlrDupBx31GkXPw0huE0TlM'
