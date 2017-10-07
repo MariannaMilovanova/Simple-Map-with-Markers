@@ -1,6 +1,6 @@
 import HomeContainer from './homeContainer';
 import { connect } from 'react-redux';
-import { getMap, goToCurrentLocation, getCurrentLocation, closeInfoAboutCurrentLocation, addMarker, deleteMarker, saveAllMarker, showAllMarker } from './homeActions';
+import { getMap, getPlaces, goToCurrentLocation, getCurrentLocation, closeInfoAboutCurrentLocation, addMarker, deleteMarker, saveAllMarker, showAllMarker } from './homeActions';
 
 const mapStateToProps = (state) => {
   return ({
@@ -22,7 +22,8 @@ const mapDispatchToProps = {
    addMarker: addMarker,
    deleteMarker: deleteMarker,
    saveAllMarker: saveAllMarker,
-   showAllMarker: showAllMarker
+   showAllMarker: showAllMarker,
+   getPlaces: getPlaces
  }
 
 const HomePage = connect(

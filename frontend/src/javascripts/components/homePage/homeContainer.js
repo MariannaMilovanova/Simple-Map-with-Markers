@@ -26,6 +26,7 @@ class HomeContainer extends React.Component {
                           map={this.props.map}
                           getMap={this.props.getMap}
                           showMarkers={this.props.showMarkers}
+                          getPlaces={this.props.getPlaces}
                           />
             <MapButtons goToCurrentLocation={this.props.goToCurrentLocation}
                         currentLocation={this.props.currentLocation}

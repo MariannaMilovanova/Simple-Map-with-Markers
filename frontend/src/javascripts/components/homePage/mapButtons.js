@@ -10,7 +10,7 @@ const MapButtons = (props) => {
       <Button color='orange' onClick={()=>props.saveAllMarker(props.mapId, props.markers)}>
             Save All Changes</Button>
       <Button color='green' onClick={()=>props.showAllMarker()}>
-            Show/Hide My Markers</Button>
+            Show/Hide Markers</Button>
     </div>
   )
 }

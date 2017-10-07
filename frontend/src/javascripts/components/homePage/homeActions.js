@@ -6,6 +6,14 @@ export const goToCurrentLocation = (showLocation, center) => {
     };
 };
 
+export const getPlaces = (bounds, keyword) => {
+    return {
+        type: 'GET_PLACES',
+        bounds,
+        keyword
+    };
+};
+
 export const getMap = () => {
     return {
         type: 'GET_MAP'
@@ -53,6 +61,6 @@ export const saveAllMarker = (mapId, markers) => {
 
 export const showAllMarker = () => {
     return {
-        type: 'SHOW_ALL_MARKERS'
+        type: 'SHOW_HIDE_ALL_MARKERS'
     };
 };

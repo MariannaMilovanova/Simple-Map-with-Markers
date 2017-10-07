@@ -4,7 +4,6 @@ import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 import { API_KEY_GM_JS } from '../../configuration/apiKeys';
 import MapComponent from './mapComponent';
-import currentLocation from '../../../../images/location.png';
 import './simpleMap.scss';
 
 export default class SimpleMap extends Component {
@@ -44,6 +43,7 @@ export default class SimpleMap extends Component {
         deleteMarker={this.props.deleteMarker}
         map={this.props.map}
         showMarkers={this.props.showMarkers}
+        getPlaces={this.props.getPlaces}
       />
     )
   }
