@@ -1,1 +1,24 @@
+// @media screen and (max-width:1200px) {
+// }
+// @media screen and (max-width:960px) {}
+@media screen and (max-width:770px) {
+    .about-author-body{
+        padding: 0 5% !important;
+    }
+}
+@media screen and (max-width:700px) {
+   .about-author-block {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .about-author-block-image{
+        margin-bottom: 5%;
+    }
+   }
+}
 
+@media screen and (max-width:400px) {
+    .about-author-body{
+        padding: 0 1% !important;
+    }
+}

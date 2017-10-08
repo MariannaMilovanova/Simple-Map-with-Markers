@@ -3,15 +3,15 @@
   .home-page-body {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin-top: 150px; 
-    .home-page-body-header {
-      text-align: center;
-      line-height: 60px;
-      font-family: 'Playfair Display', serif;
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin-top: 150px;
+	.home-page-body-header {
+	  text-align: center;
+	  line-height: 60px;
+	  font-family: 'Playfair Display', serif;
+	  font-size: 40px;
+	  margin-bottom: 15px;
+	}
   }
 }

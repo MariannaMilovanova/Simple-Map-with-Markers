@@ -3,7 +3,6 @@ import MapContainer from './mapContainer';
 import MapButtons from './mapButtons';
 import { compose, withProps } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
-import { API_KEY_GM_JS } from '../../configuration/apiKeys';
 import MapComponent from './mapComponent';
 import './simpleMap.scss';
 
@@ -19,19 +18,11 @@ export default class SimpleMap extends Component {
     this.props.getMap();
   }
 
- /* delayedShowMarker = () => {
-    setTimeout(() => {
-      this.setState({ isMarkerShown: true })
-    }, 3000)
-  }*/
-
   handleMarkerClick = () => {
     this.setState({ isMarkerShown: false })
-   /* this.delayedShowMarker()*/
   }
 
   render() {
-    console.log()
     return (
       <div className='map-wrapper'>
         <MapComponent coords={this.props.coords}

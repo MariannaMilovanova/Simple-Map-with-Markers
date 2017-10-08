@@ -26,14 +26,12 @@ export const getCurrentLocation = (coords) => {
     };
 };
 
-
 export const addMarker = (coords) => {
     return {
         type: 'ADD_NEW_MARKER',
         coords: coords
     };
 };
-
 
 export const deleteMarker = (mapId, coords) => {
     return {

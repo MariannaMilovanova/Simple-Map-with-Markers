@@ -3,9 +3,8 @@ import './userProfile.scss';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import { Link } from 'react-router';
-import { Icon, Image } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 import * as UserProfileActions from './userProfileActions';
-
 
 class UserProfile extends Component {
     constructor(props) {

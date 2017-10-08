@@ -29,7 +29,7 @@ module.exports = merge(config, {
     module: {
         loaders: [
             {
-                test: /\.scss$/,
+                test: /\.(scss|less)$/,
                 include: [
                     path.resolve(__dirname, '../src/javascripts'),
                     path.resolve(__dirname, '../src/styles'),
@@ -38,7 +38,9 @@ module.exports = merge(config, {
                     'style',
                     'css',
                     'postcss',
-                    {loader: 'sass', query: {outputStyle: 'expanded'}}
+                    {loader: 'sass', query: {outputStyle: 'expanded'}},
+                    {loader: 'less', query: {outputStyle: 'expanded'}},
+
                 ]
             },
             {

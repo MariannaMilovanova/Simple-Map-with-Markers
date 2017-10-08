@@ -26,15 +26,17 @@ class SignUp extends Component {
     render() {
         return (
             <div className='signUp-wrapper'>
-                <Container text textAlign="center" id="sign-up__container">
-                    <Container text id="sign-up__form">
+                <Container text textAlign="center" className="sign-up-container">
+                    <Container text className="sign-up-form">
                         <h3>Create an account</h3>
                         <SignUpForm onSignUp={this.handleSignUp} onChangeForm={this.handleChange}/>
                     </Container>
-                    <Container textAlign="left" id='sign-up__footer'>
-                        <p>Already have an account?</p>
-                        <Link to="/login" id="footer__link">Sign In</Link>
-                    </Container>
+                    <div className='signup-footer-wrapper'>
+                        <div className='signup-footer-text'>Already have an account?</div>
+                        <Link to={'/login'}>
+                            <div className='signup-footer-btn'><Button color='green'>Sign up</Button></div>
+                        </Link>
+                    </div>
                 </Container>
             </div>
         );
