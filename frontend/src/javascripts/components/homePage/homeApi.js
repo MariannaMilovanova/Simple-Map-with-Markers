@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { KEY } from '../configuration/apiKeys'
 
 const url = 'http://localhost:2020/api/map';
 const getMap = () =>

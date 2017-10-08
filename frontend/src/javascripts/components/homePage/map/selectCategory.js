@@ -8,10 +8,10 @@ const SelectCategory = (props) => {
             <Dropdown 
                 placeholder='Category'
                 selection
-                onChange={(event, data)=>props.onCategoryChoice(data.value)}
+                onChange={(event, data) => props.onCategoryChoice(data.value)}
                 options={categories}/>
         </div>
-    )
+    );
 }
 
 export default SelectCategory

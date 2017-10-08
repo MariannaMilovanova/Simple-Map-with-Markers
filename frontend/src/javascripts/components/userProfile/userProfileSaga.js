@@ -1,8 +1,7 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import * as userApi from './userApi';
 
-
-function* getCurrentUser(action) {
+function* getCurrentUser() {
     try {
         const user = yield call(userApi.getCurrentUser);
         yield put({type: "GET_CURRENT_USER_SUCCEEDED", user: user});
