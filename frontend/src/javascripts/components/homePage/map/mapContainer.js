@@ -22,7 +22,11 @@ class MapContainer extends React.Component {
                                map={this.props.map}
                                getMap={this.props.getMap}
                                showMarkers={this.props.showMarkers}
-                               getPlaces={this.props.getPlaces}
+                               goToCurrentLocation={this.props.goToCurrentLocation}
+                               saveAllMarker={this.props.saveAllMarker}
+                               showAllMarker={this.props.showAllMarker}
+                               markers={this.props.markers}
+                               mapId={this.props.mapId}
                             />
                 </div>
           : <div>Getting the location data&hellip; </div>;

@@ -6,14 +6,6 @@ export const goToCurrentLocation = (showLocation, center) => {
     };
 };
 
-export const getPlaces = (bounds, keyword) => {
-    return {
-        type: 'GET_PLACES',
-        bounds,
-        keyword
-    };
-};
-
 export const getMap = () => {
     return {
         type: 'GET_MAP'

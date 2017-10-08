@@ -5,3 +5,34 @@
         font-size: 200%;
     }
 }
+
+.map-wrapper{
+      border: 1px solid yellow;
+      margin: 0 auto;
+      width: 602px;
+      height: 402px;
+      position: relative;
+      .map-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 4%;
+    }
+    .selet-category-dropdown-wrapper {
+        position: absolute;
+        top: 45px;
+        left: 1px;
+        z-index: 3;
+        .ui.selection.dropdown {
+            min-width: 9em !important;
+            font-size: 0.9rem !important;
+        }
+        .ui.dropdown .menu>.item {
+            font-size: 0.9rem !important;
+            line-height: 0.9rem !important;
+        }
+        .ui.selection.dropdown .menu>.item {
+            padding: .6rem 0.8rem!important;
+            min-height: 25px;
+        }
+    }
+}

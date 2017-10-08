@@ -22,8 +22,7 @@ const mapDispatchToProps = {
    addMarker: addMarker,
    deleteMarker: deleteMarker,
    saveAllMarker: saveAllMarker,
-   showAllMarker: showAllMarker,
-   getPlaces: getPlaces
+   showAllMarker: showAllMarker
  }
 
 const HomePage = connect(

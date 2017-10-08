@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
-import UserProfile from '../userProfile/userProfile';
+import UserProfile from '../../userProfile/userProfile';
 import { Link } from 'react-router';
+import './header.scss'
 
 let HomePageHeader = (props) => {
   return (
