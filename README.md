@@ -7,11 +7,11 @@ How to install:
 3) in one console start MongoDB: 
   - mongod
 4) in second console: 
-  - cd Simple-Map-with-Markers\backend
+  - cd Simple-Map-with-Markers/backend
   - npm i
   - npm start
 5) in third console:
-  - cd Simple-Map-with-Markers\frontend
+  - cd Simple-Map-with-Markers/frontend
   - npm i
   - npm start
 6) go to http://localhost:3000/
