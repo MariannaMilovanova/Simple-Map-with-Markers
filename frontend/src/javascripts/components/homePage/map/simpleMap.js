@@ -31,6 +31,7 @@ export default class SimpleMap extends Component {
   }
 
   render() {
+    console.log()
     return (
       <div className='map-wrapper'>
         <MapComponent coords={this.props.coords}
@@ -45,13 +46,14 @@ export default class SimpleMap extends Component {
           deleteMarker={this.props.deleteMarker}
           map={this.props.map}
           showMarkers={this.props.showMarkers}
+          markers={this.props.markers}
         />
         <MapButtons goToCurrentLocation={this.props.goToCurrentLocation}
           currentLocation={this.props.currentLocation}
           saveAllMarker={this.props.saveAllMarker}
           showAllMarker={this.props.showAllMarker}
-          markers={this.props.markers}
           mapId={this.props.mapId}
+          markers={this.props.markers}
         />
       </div>
     )

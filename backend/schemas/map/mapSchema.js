@@ -10,13 +10,6 @@ const mapSchema = new Schema({
     },
     description: String,
     userMarkers: [],
-    searchMarkers: [
-        {
-         _id: ObjectId, 
-         lat: Number,
-         lng: Number 
-        }
-    ],
     createdAt: {
         type: Date,
         default: Date.now,

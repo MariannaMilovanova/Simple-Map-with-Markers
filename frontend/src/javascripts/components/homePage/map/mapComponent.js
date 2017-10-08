@@ -11,8 +11,8 @@ class MapComponent extends Component {
       super(props);
       this.state = {
         showLocation: this.props.showLocation,
+        showCategoryMarker: true,
         locationMarker: false,
-        markers: [],
         center: {lat: this.props.coords.latitude, lng: this.props.coords.longitude},
         bounds: null,
         select:'',
@@ -29,7 +29,7 @@ class MapComponent extends Component {
         category: nextProps.category
       })
     }
-    if (nextProps.showLocation) {
+    if (nextProps.showLocation & nextProps.center) {
       this.setState({
         showLocation: nextProps.showLocation
       })
@@ -56,7 +56,10 @@ class MapComponent extends Component {
   }
   onCategoryChoice = (category) => {
     if (category === 'nothing') {
+      this.setState({showCategoryMarker: false})
       return
+    } else {
+      this.setState({showCategoryMarker: true})
     }
 
     let center = this.refs.map.getCenter();
@@ -83,7 +86,6 @@ class MapComponent extends Component {
        placesToMap(1000)       
     ])  
     .then((places)=> {
-      console.log(places[0].status)
       if (places[0].status === "ZERO_RESULTS") {
         return placesToMap(10000)
       } else {
@@ -114,9 +116,6 @@ class MapComponent extends Component {
     let markers = [...this.state.markers] 
     let coords = { lat: event.latLng.lat(), lng: event.latLng.lng() }
     markers.push(coords)
-    this.setState({
-      markers: markers
-    })
     this.props.addMarker(coords)
   }
   
@@ -124,10 +123,6 @@ class MapComponent extends Component {
     let markers = [...this.state.markers]
     this.props.deleteMarker(this.props.map._id, markers[index]);
     markers.splice(index, 1);
-    this.setState({
-      markers: markers
-    })
-
   }
   onCloseClick = () => {
     this.props.closeInfoAboutCurrentLocation(false);
@@ -149,18 +144,18 @@ class MapComponent extends Component {
         onBoundsChanged={this.onBoundsChanged}
         onDrag={this.onMapDrag}
       >
-        { /*this.state.showLocation && <InfoWindow position={currentLocation} onCloseClick={this.onCloseClick}>
+        {this.state.showLocation && <InfoWindow position={currentLocation} onCloseClick={this.onCloseClick}>
             <div>
               Location found
             </div>
-          </InfoWindow>*/
+          </InfoWindow>
         }
         { this.state.locationMarker && <Marker position={currentLocation} icon={locationImg} image/>}
-        {this.props.showMarkers && this.state.markers.map((marker, i)=> {
+        {this.props.showMarkers && this.props.markers.map((marker, i)=> {
           return <Marker position={marker} key={i} icon={image} image onClick={(event, marker)=>this.deleteMarker(i)}/>
         })}
           <SelectCategory onCategoryChoice={this.onCategoryChoice}/>
-        {this.props.showMarkers && this.state.chosenPlaces.map((marker, index) =>
+        {this.state.showCategoryMarker && this.state.chosenPlaces.map((marker, index) =>
           <Marker key={index} position={marker.position} />
         )}
       </GoogleMap>

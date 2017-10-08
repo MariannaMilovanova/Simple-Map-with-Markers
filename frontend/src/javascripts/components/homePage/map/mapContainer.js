@@ -19,6 +19,7 @@ class MapContainer extends React.Component {
                                center={this.props.center}
                                addMarker={this.props.addMarker}
                                deleteMarker={this.props.deleteMarker}
+                               currentLocation={this.props.currentLocation}
                                map={this.props.map}
                                getMap={this.props.getMap}
                                showMarkers={this.props.showMarkers}
