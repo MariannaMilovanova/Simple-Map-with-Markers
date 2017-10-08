@@ -15,7 +15,7 @@ const AboutAuthor = () => (
             <Header className='about-author-body-header' as='h3' block textAlign="center">Author The Author</Header>
             <div className='about-author-block'> 
                 <div className='about-author-block-image'> 
-                    <Image src={photo} size='medium' fluid/> 
+                    <Image src={photo} fluid/> 
                 </div>
                 <div className ='about-author-body-text'>
                     <Header as='h3' dividing textAlign="center">Marianna Milovanova</Header>

@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 import {Form, Label, Button} from 'semantic-ui-react';
-import R from 'ramda';
 import * as LoginActions from './loginActions';
 import './login.scss';
 
@@ -67,45 +66,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
-                       
-                        {/* 
-                    <Grid verticalAlign="middle" centered columns={1} textAlign="center" relaxed>
-                        <Grid.Row>
-                            <Grid.Column>
-                                <Form action="/" size="big"
-                                    onSubmit={this.processForm}
-                                    onChange={this.changeUserData}>
-                                    {(!R.isEmpty(this.props.login.errors) ||
-                                      !this.props.login.success) &&
-                                    <Label color="red" className="error">
-                                        {this.props.login.message}
-                                    </Label>}
-                                    <div className="field input">
-                                        <Form.Input required size='large' icon='mail' type="text" placeholder="Email" name="email"
-                                        />
-                                        {this.props.login.errors.email &&
-                                        <Label pointing color="red" className="error">
-                                            {this.props.login.errors.email}
-                                        </Label>}
-                                    </div>
-                                    <div className="field input">
-                                        <Form.Input required size='large' icon='lock' placeholder="Password" type="password" name="password"
-                                        />
-                                        {this.props.login.errors.password &&
-                                        <Label pointing color="red" className="error">
-                                            {this.props.login.errors.password}
-                                        </Label>}
-                                    </div>
-                                    <Button id="loginBtn" type="submit" color='orange' fluid>
-                                        Sign in
-                                    </Button>
-                                </Form>
-                            </Grid.Column>
-                        </Grid.Row>
-                        <div id="login-footer">
-                            <p>Don’t have an account?</p>
-                            <Link to={'/signup'}>Sign up for free</Link>
-                        </div>
-                    </div>
-                </div>
-            </Grid> */}

@@ -2,14 +2,53 @@ import React from 'react';
 import {geolocated} from 'react-geolocated';
 import SimpleMap from './simpleMap'
 
-
 class MapContainer extends React.Component {
   render() {
     return !this.props.isGeolocationAvailable
-          ? <div>Your browser does not support Geolocation</div>
+          ? <div>
+              <div className='map-wrapper'>
+                <div className='noSupportGeolocation'>Your browser does not support Geolocation</div>
+                <SimpleMap  
+                           showLocation={this.props.showLocation}
+                           closeInfoAboutCurrentLocation={this.props.closeInfoAboutCurrentLocation}
+                           center={this.props.center}
+                           addMarker={this.props.addMarker}
+                           deleteMarker={this.props.deleteMarker}
+                           currentLocation={this.props.currentLocation}
+                           map={this.props.map}
+                           getMap={this.props.getMap}
+                           showMarkers={this.props.showMarkers}
+                           goToCurrentLocation={this.props.goToCurrentLocation}
+                           saveAllMarker={this.props.saveAllMarker}
+                           showAllMarker={this.props.showAllMarker}
+                           markers={this.props.markers}
+                           mapId={this.props.mapId}
+                        />
+                </div>
+              </div>
           : !this.props.isGeolocationEnabled
 
-            ? <div>Geolocation is not enabled</div>
+            ? <div>
+                <div className='map-wrapper'>
+                  <div className='noSupportGeolocation'>Geolocation is not enabled</div>
+                  <SimpleMap  
+                             showLocation={this.props.showLocation}
+                             closeInfoAboutCurrentLocation={this.props.closeInfoAboutCurrentLocation}
+                             center={this.props.center}
+                             addMarker={this.props.addMarker}
+                             deleteMarker={this.props.deleteMarker}
+                             currentLocation={this.props.currentLocation}
+                             map={this.props.map}
+                             getMap={this.props.getMap}
+                             showMarkers={this.props.showMarkers}
+                             goToCurrentLocation={this.props.goToCurrentLocation}
+                             saveAllMarker={this.props.saveAllMarker}
+                             showAllMarker={this.props.showAllMarker}
+                             markers={this.props.markers}
+                             mapId={this.props.mapId}
+                          />
+                  </div>
+              </div>
             : this.props.coords
               ?  <div className='map-wrapper'>
                     <SimpleMap coords={this.props.coords} 

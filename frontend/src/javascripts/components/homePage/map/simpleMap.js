@@ -17,6 +17,7 @@ export default class SimpleMap extends Component {
 
   componentWillMount() {
     this.props.getMap();
+    
   }
 
  /* delayedShowMarker = () => {

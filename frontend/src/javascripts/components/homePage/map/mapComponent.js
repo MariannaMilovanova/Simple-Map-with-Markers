@@ -11,9 +11,11 @@ class MapComponent extends Component {
       super(props);
       this.state = {
         showLocation: this.props.showLocation,
-        showCategoryMarker: true,
         locationMarker: false,
-        center: {lat: this.props.coords.latitude, lng: this.props.coords.longitude},
+        center: {
+                  lat: this.props.coords ? this.props.coords.latitude : 50.4501, 
+                  lng: this.props.coords? this.props.coords.longitude : 30.523400000000038
+                },
         bounds: null,
         select:'',
         chosenPlaces:[],
@@ -21,7 +23,9 @@ class MapComponent extends Component {
       }
     }
   componentDidMount(){
-    this.props.getCurrentLocation(this.props.coords)
+    if (this.props.coords) {
+      this.props.getCurrentLocation(this.props.coords)
+    }
   }
   componentWillReceiveProps(nextProps) {
      if (nextProps.category!=this.props.category) {
@@ -55,13 +59,6 @@ class MapComponent extends Component {
     })
   }
   onCategoryChoice = (category) => {
-    if (category === 'nothing') {
-      this.setState({showCategoryMarker: false})
-      return
-    } else {
-      this.setState({showCategoryMarker: true})
-    }
-
     let center = this.refs.map.getCenter();
     let stateCenter = { lat: center.lat(), lng: center.lng()}
     const placesUrl = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?'
@@ -133,8 +130,7 @@ class MapComponent extends Component {
   render() {
     let image = require('../../../../images/beachflag.png');
     let locationImg = require('../../../../images/currentLocation.png');
-    //let defaultCenter =  {lat: 50.4501, lng: 30.523400000000038}
-    let currentLocation = {lat: this.props.coords.latitude, lng: this.props.coords.longitude}
+    let currentLocation = this.props.coords ? {lat: this.props.coords.latitude, lng: this.props.coords.longitude} : 'none'
     return (
       <GoogleMap
         ref='map'
@@ -144,18 +140,18 @@ class MapComponent extends Component {
         onBoundsChanged={this.onBoundsChanged}
         onDrag={this.onMapDrag}
       >
-        {this.state.showLocation && <InfoWindow position={currentLocation} onCloseClick={this.onCloseClick}>
+        {currentLocation != 'none' && this.state.showLocation && <InfoWindow position={currentLocation} onCloseClick={this.onCloseClick}>
             <div>
               Location found
             </div>
           </InfoWindow>
         }
-        { this.state.locationMarker && <Marker position={currentLocation} icon={locationImg} image/>}
+        {currentLocation != 'none' && this.state.locationMarker && <Marker position={currentLocation} icon={locationImg} image/>}
         {this.props.showMarkers && this.props.markers.map((marker, i)=> {
           return <Marker position={marker} key={i} icon={image} image onClick={(event, marker)=>this.deleteMarker(i)}/>
         })}
           <SelectCategory onCategoryChoice={this.onCategoryChoice}/>
-        {this.state.showCategoryMarker && this.state.chosenPlaces.map((marker, index) =>
+        {this.state.chosenPlaces.map((marker, index) =>
           <Marker key={index} position={marker.position} />
         )}
       </GoogleMap>
