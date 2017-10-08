@@ -20,9 +20,9 @@ const homePageStore = (state = initialState, action) => {
 		case 'GET_CURRENT_LOCATION':
 			return {...state, ...{currentLocataion: action.coords, center: {lat: action.coords.latitude, lng: action.coords.longitude}}}
 		case 'ADD_NEW_MARKER':
-			return {...state, markers: state.markers.concat(action.coords)};
+			return {...state, markers: state.markers.concat(action.marker)};
 		case 'DELETE_MARKER':
-			return {...state, ...{markers: state.markers.filter(marker => marker.lat !== action.coords.lat && marker.lng !== action.coords.lng)}}
+			return {...state, ...{markers: state.markers.filter(stateMarker => stateMarker.id !== action.marker.id)}}
 		case 'SAVE_ALL_MARKERS_SUCCEEDED':
 			return {...state, ...{map: action.map}}
 		case 'SHOW_HIDE_ALL_MARKERS':

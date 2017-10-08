@@ -26,18 +26,17 @@ export const getCurrentLocation = (coords) => {
     };
 };
 
-export const addMarker = (coords) => {
+export const addMarker = (marker) => {
     return {
         type: 'ADD_NEW_MARKER',
-        coords: coords
+        marker
     };
 };
 
-export const deleteMarker = (mapId, coords) => {
+export const deleteMarker = (marker) => {
     return {
         type: 'DELETE_MARKER',
-        mapId,
-        coords
+        marker
     };
 };
 

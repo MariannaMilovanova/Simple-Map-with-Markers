@@ -52,7 +52,7 @@ module.exports = merge(config, {
         noParse: /\.min\.js$/,
         loaders: [
             {
-                test: /\.scss$/,
+                test: /\.(scss|less)$/,
                 include: [
                     path.resolve(__dirname, '../src/javascripts'),
                     path.resolve(__dirname, '../src/styles'),
@@ -62,7 +62,8 @@ module.exports = merge(config, {
                     loader: [
                         {loader: 'css', query: {sourceMap: true}},
                         'postcss',
-                        {loader: 'sass', query: {outputStyle: 'compressed'}}
+                        {loader: 'sass', query: {outputStyle: 'compressed'}},
+                        {loader: 'less', query: {outputStyle: 'compressed'}}
                     ]
                 })
             },

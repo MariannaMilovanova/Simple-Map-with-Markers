@@ -110,16 +110,21 @@ class MapComponent extends Component {
     }) 
   }
   handleMapClick = (event) => {
+    function uuidv4() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+      });
+    }
     let markers = [...this.state.markers] 
-    let coords = { lat: event.latLng.lat(), lng: event.latLng.lng() }
+    let coords = { id: uuidv4(), lat: event.latLng.lat(), lng: event.latLng.lng() }
     markers.push(coords)
     this.props.addMarker(coords)
   }
   
   deleteMarker = (index) => {
-    let markers = [...this.state.markers]
-    this.props.deleteMarker(this.props.map._id, markers[index]);
-    markers.splice(index, 1);
+    let markers = [...this.props.markers]
+    this.props.deleteMarker(markers[index]);
   }
   onCloseClick = () => {
     this.props.closeInfoAboutCurrentLocation(false);
