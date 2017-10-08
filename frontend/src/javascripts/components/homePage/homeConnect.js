@@ -1,6 +1,6 @@
 import HomeContainer from './homeContainer';
 import { connect } from 'react-redux';
-import { getMap, goToCurrentLocation, getCurrentLocation, closeInfoAboutCurrentLocation, addMarker, deleteMarker, saveAllMarker, showAllMarker } from './homeActions';
+import { getMap, getPlaces, goToCurrentLocation, getCurrentLocation, closeInfoAboutCurrentLocation, addMarker, deleteMarker, saveAllMarker, showAllMarker } from './homeActions';
 
 const mapStateToProps = (state) => {
   return ({

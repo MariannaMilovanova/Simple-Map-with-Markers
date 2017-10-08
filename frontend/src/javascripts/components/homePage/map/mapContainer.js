@@ -19,9 +19,15 @@ class MapContainer extends React.Component {
                                center={this.props.center}
                                addMarker={this.props.addMarker}
                                deleteMarker={this.props.deleteMarker}
+                               currentLocation={this.props.currentLocation}
                                map={this.props.map}
                                getMap={this.props.getMap}
                                showMarkers={this.props.showMarkers}
+                               goToCurrentLocation={this.props.goToCurrentLocation}
+                               saveAllMarker={this.props.saveAllMarker}
+                               showAllMarker={this.props.showAllMarker}
+                               markers={this.props.markers}
+                               mapId={this.props.mapId}
                             />
                 </div>
           : <div>Getting the location data&hellip; </div>;
@@ -30,7 +36,7 @@ class MapContainer extends React.Component {
 
 export default geolocated({
   positionOptions: {
-    enableHighAccuracy: false,
+    enableHighAccuracy: true,
   },
   userDecisionTimeout: 5000,
 })(MapContainer);

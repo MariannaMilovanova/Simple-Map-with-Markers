@@ -53,6 +53,6 @@ export const saveAllMarker = (mapId, markers) => {
 
 export const showAllMarker = () => {
     return {
-        type: 'SHOW_ALL_MARKERS'
+        type: 'SHOW_HIDE_ALL_MARKERS'
     };
 };
