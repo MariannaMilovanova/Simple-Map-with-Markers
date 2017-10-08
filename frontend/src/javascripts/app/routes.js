@@ -5,6 +5,7 @@ import {browserHistory} from 'react-router';
 import App from './App';
 import StartPage from '../components/StartPage';
 import NotFound from '../components/notFound/notFound';
+import AboutAuthor from '../components/aboutAuthor/aboutAuthor';
 import SignUp from '../components/auth/signUp/signUp';
 import Login from '../components/auth/login/login';
 import Logout from '../components/auth/logout/logout';
@@ -16,6 +17,7 @@ export default (
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={Login}/>
         <Route path="/logout" component={Logout}/>
+        <Route path="/author" component={AboutAuthor}/>
         <Route path="404" component={NotFound}/>
         <Redirect from="*" to="404"/>
     </Route>
